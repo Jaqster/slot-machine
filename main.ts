@@ -10,15 +10,8 @@ function checkWin () {
     return true
 }
 input.onButtonPressed(Button.A, function () {
-    stopIndex = (stopIndex + 1) % 6
-    music.play(music.createSoundExpression(WaveShape.Sine, 500, 500, 255, 0, 50, SoundExpressionEffect.Vibrato, InterpolationCurve.Linear), music.PlaybackMode.UntilDone)
+	
 })
-/**
- * Press the A button to make the light stop for each column on the micro:bit.
- * 
- * Line up 5 lights in a row to win!
- */
-let stopIndex = 0
 let list: game.LedSprite[] = []
 // A list of sprites - one per column
 // Each sprite has an (x, y) coordinate
@@ -30,7 +23,12 @@ game.createSprite(3, 2),
 game.createSprite(4, 2)
 ]
 // Variable to keep track of which column we're stopping at
-stopIndex = 0
+let stopIndex = 0
+/**
+ * Press the A button to make the light stop for each column on the micro:bit.
+ * 
+ * Line up 5 lights in a row to win!
+ */
 basic.forever(function () {
     // This loop animates each of the sprites by incrementing their y coordinate
     for (let index = 0; index <= 4; index++) {
