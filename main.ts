@@ -10,8 +10,9 @@ function checkWin () {
     return true
 }
 input.onButtonPressed(Button.A, function () {
-	
+	stopIndex = (stopIndex + 1) % 6
 })
+
 let list: game.LedSprite[] = []
 // A list of sprites - one per column
 // Each sprite has an (x, y) coordinate
